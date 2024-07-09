@@ -16,6 +16,7 @@
       "type": "application",
       "root": "apps/apiGateway",
       "entryFile": "src/main",
+      
       "sourceRoot": "./",
       "compilerOptions": {
         "tsConfigPath": "apps/apiGateway/tsconfig.app.json",
