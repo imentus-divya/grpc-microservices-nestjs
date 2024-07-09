@@ -1,0 +1,35 @@
+syntax="proto3";
+package auth;
+
+// rpc definition - that will call grpc client which method we can actually invoke on on the server
+service UserAuthService
+{
+    rpc createUser(createUserAuthDto) returns (User) {}
+    rpc findAll(Empty) returns (Users){}
+
+}
+
+
+// shape of user
+message User{
+    int32 id=4;
+    string username=1;
+    string password=2;
+    string userType=3;  
+}
+// shape of create user request
+message createUserAuthDto
+{   int32 id=4;
+    string username=1;
+    string password=2;
+    string userType=3;     
+}
+// empty shape - as no parameters required
+message Empty {}
+
+//shape of all users returned
+message Users{
+    // repeated = array 
+    // repeate User (User message) named users=1 / reference our User type created above    
+    repeated User users=1;
+}
